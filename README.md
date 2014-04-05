@@ -12,7 +12,7 @@ define('myModule', ['jbm'], function (jbm) {
 });
 ```
 
-If `window.define is not detected, then you can reference jbm via `window.jbm`
+If `window.define` is not detected, then you can reference jbm via `window.jbm`
 
 ```
 var jbm = window.jbm

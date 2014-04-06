@@ -36,7 +36,12 @@
   // test case wrapper
   jbm.runTest = function(name, fn, reporterCallback) {
     jbm._runTest(name, fn, function(result) {
-      console.log(name + ' => ' + result);
+      if (!reporterCallback) {
+        console.log(name + ' => ' + result);
+      }
+      else {
+        reporterCallback(name, result);
+      }
     });
   };
   
@@ -56,18 +61,14 @@
     var isAsync = verifyAsync(fn),
         ts = performance.now();
     if (isAsync) {
-      fn(jbm._done.bind(this));
+      fn(function() {
+        cb(performance.now() - ts);
+      }.bind(this));
     }
     else {
       fn();
       cb(performance.now() - ts);
     }
-  }
-
-  // done function called when async test case finishes
-  // This function's context is binded to jbm._runTest
-  jbm._done = function() {
-    cb(performance.now() - ts);
   }
 
 

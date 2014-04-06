@@ -2,6 +2,21 @@
 JavaScript benchmark tool. Jbm will tell you how long does your test case run with a precision of **10 µs**.
 
 ## Installation
+You can use it as a AMD style module, simply reference it via `require` function.
+
+```
+require(['path/to/module/jbm'], function(jbm) {
+
+});
+```
+
+Or use it as a standalone library.
+
+```
+<script src="//path/to/jbm/jbm.js"></script>
+```
+
+Because you will only use jbm in development stage, I don't think it is necessary to offer a minified version of Jbm. And it is already really small, isn't it? ;)
 
 ## Usage
 If `window.define` is detected, then you can use AMD style module loader.
@@ -42,7 +57,7 @@ jbm.runTest('Test1', function() {
 ```
 
 When the test case finishes, the reporter will tell you how long does your test case run with a precision of **10 µs**.  
-`fn` also accepts an optional argument `done`. If you specified `done` in the argument list, the test case will be marked finished only when the `done` is called. This is super great when you are testing async functions.
+`fn` also accepts an optional argument `done`. If you specified `finish` in the argument list, the test case will be marked finished only when the `done` is called. This is super great when you are testing async functions.
 
 ```
 jbm.runTest('TestAsync', function(done) {
@@ -78,6 +93,24 @@ For example:
 ```
 Test1 => 9386.461999965832
 ```
+
+## Testing
+
+Jbm uses karma test runner to run test.
+
+```
+$ [sudo] npm install
+$ karma start karma.conf.js
+```
+
+## Contributing
+
+Submit issues & feature request on github. If you want, you can send me a lovely pull request.
+
+- Fork this repo
+- Do some awesome thing
+- Create a pull request
+- Waiting for review
 
 ## Browser compability
 

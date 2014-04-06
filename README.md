@@ -64,6 +64,8 @@ jbm.runTest('TestAsync', function(done) {
 });
 ```
 
+> Jbm test cases run asynchronously.
+
 ## Reporter
 Once the test case finishes, reporter will output the time usage in the following format.
 

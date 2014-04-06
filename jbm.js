@@ -35,8 +35,8 @@
   
   // test case wrapper
   jbm.runTest = function(name, fn, reporterCallback) {
-    jbm.runTest(name, fn, function(result) {
-
+    jbm._runTest(name, fn, function(result) {
+      console.log(name + ' => ' + result);
     });
   };
   

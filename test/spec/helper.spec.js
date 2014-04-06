@@ -19,5 +19,4 @@ define(['should', 'jbm'], function(should, jbm) {
     });
   });
 
-  return true;
 });

@@ -1,5 +1,5 @@
 ## Jbm (under planning stage)
-JavaScript benchmark tool. Jbm combines the fancy Webworker and DOMHighResTimeStamp to test performance.
+JavaScript benchmark tool. Jbm will tell you how long does your test case run with a precision of **10 µs**.
 
 ## Installation
 

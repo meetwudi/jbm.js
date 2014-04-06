@@ -28,7 +28,7 @@ If you don't want Jbm pollute your `window` object, you can use `noConflict` to 
 })(window);
 ```
 
-#### runTest(name, fn)
+#### runTest(name, fn[, reporterCallback])
 Start a test. `name` would be the name of the test, which helps you distinguish test cases.  
 You have to put all code to be tested in the `fn` function, the main body of the test case. 
 
@@ -49,6 +49,18 @@ jbm.runTest('TestAsync', function(done) {
   doSomeThingAsync(function() {
     done();
   });
+});
+```
+
+You can pass in a callback function `reporterCallback`, which accepts two parameters `name` as the first parameter and `timeUsed` as the second parameter. If `reporterCallback` is specified, the built-in reporter will not output the results. Instead, you can customize the way you handle the result (such as writing result to a file).  
+
+```
+jbm.runTest('TestAsync', function(done) {
+  doSomeThingAsync(function() {
+    done();
+  });
+}, function(name, timeUsed) {
+  writeToFile(name + " => " + timeUsed);
 });
 ```
 

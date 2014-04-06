@@ -1,0 +1,35 @@
+{
+  "name": "jbm",
+  "version": "1.0.0",
+  "description": "JavaScript benchmark tool",
+  "main": "jbm.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "karma": "~0.12.0",
+    "karma-chrome-launcher": "~0.1.2",
+    "karma-firefox-launcher": "~0.1.3",
+    "karma-mocha": "~0.1.3"
+  },
+  "devDependencies": {
+    "mocha": "~1.18.0"
+  },
+  "scripts": {
+    "test": "karma start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tjwudi/jbm.git"
+  },
+  "keywords": [
+    "benchmark",
+    "javascript"
+  ],
+  "author": "John Wu <webmaster@leapoahead.com> (https://github.com/tjwudi)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tjwudi/jbm/issues"
+  },
+  "homepage": "https://github.com/tjwudi/jbm"
+}

@@ -22,7 +22,7 @@ Because you will only use jbm in development stage, I don't think it is necessar
 If `window.define` is detected, then you can use AMD style module loader.
 
 ```
-define('myModule', ['jbm'], function (jbm) {
+define(['jbm'], function (jbm) {
     return ...;
 });
 ```

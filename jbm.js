@@ -1,6 +1,6 @@
 (function(window) {
   "use strict";
-  var jbm, 
+  var jbm = {}, 
       _originJbm,
       debugMode = !!window.__karma__; 
 
@@ -16,23 +16,14 @@
     for (i = 0; i < names.length; i ++) {
       names[i] = names[i].replace(/\s+/, '');
     }
-  }
-
-  // test if a string is in the array
-  function contains(value, arr) {
-    var i;
-    for (i = 0; i < arr.length; i ++) {
-      if (arr[i] === value) {
-        return true;
-      }
-    }
-    return false;
+    return names;
   }
 
   // check if fn requires a done function
+  // the done function should be the first argument
   function verifyAsync(fn) {
     var params = parseParams(fn);
-    return contains('done', params);
+    return params.length > 0 && params[0] === 'done';
   }
 
 
@@ -88,7 +79,6 @@
   if (debugMode) {
     jbm.debug = {};
     jbm.debug.parseParams = parseParams;
-    jbm.debug.contains = contains;
     jbm.debug.verifyAsync = verifyAsync;
   }
 
@@ -98,8 +88,8 @@
   window.jbm = jbm;
   
   // If AMD style module loader is adopted
-  if (!!window.define) {
-    define('jbm', [], function() {
+  if (!!window.define && !!define.amd) {
+    define([], function() {
       return jbm.noConflict();
     });
   }

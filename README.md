@@ -1,4 +1,4 @@
-## Jbm (under planning stage)
+## Jbm 
 JavaScript benchmark tool. Jbm will tell you how long does your test case run with a precision of **10 µs**.
 
 ## Installation

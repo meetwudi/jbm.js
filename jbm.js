@@ -26,9 +26,6 @@
     return params.length > 0 && params[0] === 'done';
   }
 
-
-
-
   /**
    *  Jbm API
    */
